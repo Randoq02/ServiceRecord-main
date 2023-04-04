@@ -19,11 +19,7 @@
     <!--Font Awesome Cln-->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" />
 
-    <style>
-    table td{
-        padding: 0 !important;
-    }
-</style>
+
     <title>Service Record</title>
 </head>
 
@@ -35,13 +31,6 @@
             <div class="container">
                 <button type="button" class="btn btn-primary text-white " data-bs-toggle="modal"
                     data-bs-target="#newServiceRecord"><i class="fa-solid fa-user-plus"></i> Service Records</button>
-                <div class="custom-file-upload">
-                    <label for="file-upload" class="btn btn-primary text-white">
-                        <i class="fas fa-file-csv"></i> Import CSV
-                    </label>
-                    <input id="file-upload" type="file" />
-                </div>
-                <h1></h1>
                 <table class="table table-striped table-bordered" id="ServiceRecordTbl" style="width:100%">
                     <thead>
                         <tr>
@@ -106,7 +95,6 @@
                     </tbody>
                 </table>
                 <footer>
-                    <!-- place footer here -->
                     <!-- Bootstrap JavaScript Libraries -->
                     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
                         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -115,16 +103,7 @@
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
                         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
                     </script>
-                    <!--JavaScript Libraries-->
-                    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
-                    <script defer src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-                    <script defer src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
-                    <!--javascript table-->
-                    <script src="{{ asset('javascript/table.js') }}" defer></script>
-
-                    <!--Without Pay Table-->
-                    <script src="{{ asset('javascript/without_pay.js') }}" defer></script>
 
                     <!--javascript SubmitDisabling-->
                     <script src="{{ asset('javascript/SubmitDisabling.js') }}" defer></script>
