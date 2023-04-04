@@ -1,0 +1,17 @@
+.custom-file-upload {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+   /* Import CSV Button Design */
+  .custom-file-upload:hover {
+    border-color: #999;
+  }
+  
+  .custom-file-upload input[type="file"] {
+    display: none;
+  }
+  
