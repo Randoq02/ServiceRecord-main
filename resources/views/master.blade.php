@@ -24,96 +24,116 @@
 </head>
 
 <body>
-    <header>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="serviceRecords">Service Records</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="leaveWithoutPay">Leave Without Pay</a>
+            </li>
+        </ul>
+    
+        <div class="tab-content">
+            <div id="serviceRecords" class="tab-pane fade show active">
+                <div class="card">
+                    <div class="card-header">
+                        <button type="button" class="btn btn-primary text-white " data-bs-toggle="modal"
+                            data-bs-target="#newServiceRecord"><i class="fa-solid fa-user-plus"></i> Service
+                            Records</button>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped table-bordered" id="ServiceRecordTbl">
+                            <!-- Table header -->
+                            <thead>
+                                <tr>
+                                    <th>FROM</th>
+                                    <th>TO</th>
+                                    <th>DESIGNATION</th>
+                                    <th>STATUS</th>
+                                    <th>SALARY</th>
+                                    <th>STATION PLACE OF ASSIGNMENT</th>
+                                    <th>BRANCH</th>
+                                    <th>WITHOUT PAY</th>
+                                    <th>DATE</th>
+                                    <th>CAUSE</th>
+                                    <th>AGENCY CODE</th>
+                                </tr>
+                            </thead>
+                            <!-- Table body -->
+                            <tbody>
+                                @for ($i = 1; $i < 30; $i++)
+                                    <tr class="text-center">
+                                        <td>09/16/1991</td>
+                                        <td>12/31/1991</td>
+                                        <td>Teacher 1</td>
+                                        <td>Reg/Perm.</td>
+                                        <td>72,156.00</td>
+                                        <td>DCS, PAMARISAN</td>
+                                        <td>Nat'I</td>
+                                        <td>None</td>
+                                        <td></td>
+                                        <td>Original Appt</td>
+                                        <td>1000042694</td>
+                                    </tr>
+                                @endfor
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="leaveWithoutPay" class="tab-pane fade">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Leave Without Pay</h2>
+                        <p>Authorized Leave of Absence w/o Pay DUE TO S/L</p>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped table-bordered" id="LeaveWithoutPay">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">YEAR</th>
+                                    <th class="text-center">MONTH</th>
+                                    <th class="text-center">DATE</th>
+                                    <th class="text-center">ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for ($i = 1; $i < 30; $i++)
+                                    <tr class="text-center">
+                                        <td>1991</td>
+                                        <td>March</td>
+                                        <td>22</td>   
+                                        <td class="text-center"><button type="button" class="btn btn-primary">View</button>
+                                    </td>
+                                </tr>
+                            @endfor
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <!-- Bootstrap JavaScript Libraries -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+                integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+            </script>
 
-        <header>
-            <h1></h1>
-            <div class="container">
-                <button type="button" class="btn btn-primary text-white " data-bs-toggle="modal"
-                    data-bs-target="#newServiceRecord"><i class="fa-solid fa-user-plus"></i> Service Records</button>
-                <table class="table table-striped table-bordered" id="ServiceRecordTbl" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>FROM</th>
-                            <th>TO</th>
-                            <th>DESIGNATION</th>
-                            <th>STATUS</th>
-                            <th>SALARY</th>
-                            <th style="white-space:nowrap">STATION PLACE OF ASSIGNMENT</th>
-                            <th>BRANCH</th>
-                            <th style="white-space:nowrap">WITHOUT PAY</th>
-                            <th>DATE</th>
-                            <th>CAUSE</th>
-                            <th style="white-space:nowrap">AGENCY CODE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for ($i = 1; $i < 30; $i++)
-                            <tr class="text-center">
-                                <td>09/16/1991</td>
-                                <td>12/31/1991</td>
-                                <td>Teacher 1</td>
-                                <td>Reg/Perm.</td>
-                                <td>72,156.00</td>
-                                <td>DCS, PAMARISAN</td>
-                                <td>Nat'I</td>
-                                <td>None</td>
-                                <td></td>
-                                <td>Original Appt</td>
-                                <td>1000042694</td>
-                            </tr>
-                        @endfor
-                        </tr>
-                    </tbody>
-                </table>
-        </header>
-        <main>
-            <br>
-            <div class="container">
-                <h2>Leave Without Pay</h2>
-                <p>Authorized Leave of Absence w/o Pay DUE TO S/L</p>
-                <table class="table table-striped table-bordered" id="LeaveWithoutPay" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th class="text-center">YEAR</th>
-                            <th class="text-center">MONTH</th>
-                            <th class="text-center">DATE</th>
-                            <th class="text-center">ACTION</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @for ($i = 1; $i < 30; $i++)
-                            <tr class="text-center">
-                                <td>1991</td>
-                                <td>March</td>
-                                <td>22</td>
-                                <td class="text-center"><button type="button" class="btn btn-primary">View</button>
-                                </td>
-                            </tr>
-                        @endfor
-                    </tbody>
-                </table>
-                <footer>
-                    <!-- Bootstrap JavaScript Libraries -->
-                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-                        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-                    </script>
-
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-                        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-                    </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+                integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+            </script>
 
 
-                    <!--javascript SubmitDisabling-->
-                    <script src="{{ asset('javascript/SubmitDisabling.js') }}" defer></script>
+            <!--javascript SubmitDisabling-->
+            <script src="{{ asset('javascript/SubmitDisabling.js') }}" defer></script>
 
-                    <!--Sweet alert 2 cdn-->
-                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+            <!--Sweet alert 2 cdn-->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 
-                    <!-- include the modals -->
-                    @include('modals.newServiceRecord')
-                </footer>
+            <!-- include the modals -->
+            @include('modals.newServiceRecord')
+        </footer>
 </body>
 
 </html>
