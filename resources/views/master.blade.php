@@ -10,11 +10,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.js "></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js "></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script>
+
     <!--css styles-->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
 
     <!--sweetalert CSS-->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.4/css/dataTables.semanticui.min.css" rel="stylesheet">
 
     <!--Font Awesome Cln-->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" />
@@ -27,13 +34,13 @@
     <div class="container">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" data-bs-toggle="tab" href="serviceRecords">Service Records</a>
+                <a class="nav-link active" data-bs-toggle="tab" href="#serviceRecords">Service Records</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="leaveWithoutPay">Leave Without Pay</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#leaveWithoutPay">Leave Without Pay</a>
             </li>
         </ul>
-    
+
         <div class="tab-content">
             <div id="serviceRecords" class="tab-pane fade show active">
                 <div class="card">
@@ -43,10 +50,10 @@
                             Records</button>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped table-bordered" id="ServiceRecordTbl">
+                        <table class="ui celled table" id="ServiceRecordTbl">
                             <!-- Table header -->
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th>FROM</th>
                                     <th>TO</th>
                                     <th>DESIGNATION</th>
@@ -82,7 +89,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <div id="leaveWithoutPay" class="tab-pane fade">
                 <div class="card">
                     <div class="card-header">
@@ -104,36 +111,39 @@
                                     <tr class="text-center">
                                         <td>1991</td>
                                         <td>March</td>
-                                        <td>22</td>   
-                                        <td class="text-center"><button type="button" class="btn btn-primary">View</button>
-                                    </td>
-                                </tr>
-                            @endfor
-                        </tbody>
-                    </table>
+                                        <td>22</td>
+                                        <td class="text-center"><button type="button"
+                                                class="btn btn-primary">View</button>
+                                        </td>
+                                    </tr>
+                                @endfor
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-        <footer>
-            <!-- Bootstrap JavaScript Libraries -->
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-                integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-            </script>
+            <footer>
+                <!-- Bootstrap JavaScript Libraries -->
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+                    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+                </script>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-                integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-            </script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+                    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+                </script>
+
+                <!--javascript SubmitDisabling-->
+                <script src="{{ asset('javascript/SubmitDisabling.js') }}" defer></script>
+                <script src="{{ asset('javascript/sortingtable.js') }}" defer></script>
 
 
-            <!--javascript SubmitDisabling-->
-            <script src="{{ asset('javascript/SubmitDisabling.js') }}" defer></script>
+                <!--Sweet alert 2 cdn-->
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 
-            <!--Sweet alert 2 cdn-->
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 
-            <!-- include the modals -->
-            @include('modals.newServiceRecord')
-        </footer>
+                <!-- include the modals -->
+                @include('modals.newServiceRecord')
+            </footer>
 </body>
 
 </html>
