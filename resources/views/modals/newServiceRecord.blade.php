@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <form class="needs-validation" novalidate>
                     <div class="row">
-                        <div class="col-md-4 mb-2">
+                        <div class="col-md-4 mb-3">
                             <label for="datepicker">From</label><br>
                             <input class="form-control" type="date" id="datepicker" min="1990-01-01" max="2100-12-31"
                                 required>
@@ -99,3 +99,5 @@
                 </form>
             </div>
         </div>
+    </div>
+</div>

@@ -26,7 +26,6 @@
     <!--Font Awesome Cln-->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" />
 
-
     <title>Service Record</title>
 </head>
 
@@ -34,7 +33,7 @@
     <div class="container">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" data-bs-toggle="tab" href="#serviceRecords">Service Records</a>
+                <a class="nav-link active" data-bs-toggle="tab" href="#serviceRecords">Service Record</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#leaveWithoutPay">Leave Without Pay</a>
@@ -47,13 +46,14 @@
                     <div class="card-header">
                         <button type="button" class="btn btn-primary text-white " data-bs-toggle="modal"
                             data-bs-target="#newServiceRecord"><i class="fa-solid fa-user-plus"></i> Service
-                            Records</button>
+                            Record</button>
                     </div>
                     <div class="card-body">
                         <table class="ui celled table" id="ServiceRecordTbl">
                             <!-- Table header -->
                             <thead>
                                 <tr class="text-center">
+                                    <th>Employee ID</th>
                                     <th>FROM</th>
                                     <th>TO</th>
                                     <th>DESIGNATION</th>
@@ -71,6 +71,7 @@
                             <tbody>
                                 @for ($i = 1; $i < 30; $i++)
                                     <tr class="text-center">
+                                        <td>0286315</td> 
                                         <td>09/16/1991</td>
                                         <td>12/31/1991</td>
                                         <td>Teacher 1</td>

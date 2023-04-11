@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ServiceRecordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/ServiceRecords', function () {
-    return view('master');
-});
+
+
+Route::get('/ServiceRecord', [ServiceRecordController::class, 'master'])->name('employee');
+Route::get('/ListOfEmployee', [ServiceRecordController::class, 'Overview']);
+
+
+
