@@ -135,7 +135,7 @@
 
                 <!--javascript SubmitDisabling-->
                 <script src="{{ asset('javascript/SubmitDisabling.js') }}" defer></script>
-                <script src="{{ asset('javascript/sortingtable.js') }}" defer></script>
+                <script src="{{ asset('javascript/ServiceRecord.js') }}" defer></script>
 
 
                 <!--Sweet alert 2 cdn-->

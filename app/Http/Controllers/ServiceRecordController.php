@@ -7,7 +7,7 @@ class ServiceRecordController extends Controller
 {
     public function master()
     {
-        return view('master');
+         return view('master');
     }
 
     public function Overview()
