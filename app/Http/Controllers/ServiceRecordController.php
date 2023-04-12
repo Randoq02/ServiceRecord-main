@@ -14,9 +14,4 @@ class ServiceRecordController extends Controller
     {
         return view('Overview');
     }
-
-    public function search()
-    {
-        return view('search');
-    }
 }
