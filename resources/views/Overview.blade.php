@@ -46,14 +46,12 @@
                 </thead>
                 <!-- Table body -->
                 <tbody>
-                    @for ($i = 1; $i < 30; $i++)
-                        <tr class="text-center">
-                            <td>0286315</td>
-                            <td><a href="{{ route('employee') }}">Mark Anthony H. Catubig</a></td>
-                            <td>mcatubig27@gmail.com</td>
-                            <td>Office Clerk</td>
-                            <td>School Division Office- Marikina</td>
-                    @endfor
+                    <tr class="text-center">
+                        <td>0286315</td>
+                        <td><a href="{{ route('employee') }}">Mark Anthony H. Catubig</a></td>
+                        <td>mcatubig27@gmail.com</td>
+                        <td>Office Clerk</td>
+                        <td>School Division Office- Marikina</td>
                 </tbody>
             </table>
         </div>
