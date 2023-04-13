@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -13,7 +13,7 @@
 
     <!-- Css plugin -->    
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>Document</title>
+    <title>Search Employee</title>
 </head>
 
 <body>
@@ -22,6 +22,9 @@
             <tr>
                 <td>
                     <input type="text" placeholder="Search" class="search">
+                </td>
+                <td>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </td>
             </tr>
         </table>
