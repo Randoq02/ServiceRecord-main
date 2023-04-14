@@ -1,6 +1,6 @@
-// Hide table and "No results found" message initially
-document.querySelector('.table').style.display = 'none';
-document.getElementById("noResults").style.display = "none";
+// Get table body and "No results found" message element
+var tableBody = document.getElementById("tableBody");
+var noResultsMsg = document.getElementById("noResults");
 
 // Add event listener to search input
 document.querySelector('.search').addEventListener('keyup', filterTable);
@@ -32,12 +32,13 @@ function filterTable() {
     // Show/hide table and "No results found" message based on search query
     if (searchInput === '') {
         document.querySelector('.table').style.display = 'none';
-        document.getElementById("noResults").style.display = "none";
+        noResultsMsg.style.display = "none";
     } else if (noResults) {
+        tableBody.innerHTML = "<tr><td colspan='5'>" + "No results found." + "</td></tr>";
         document.querySelector('.table').style.display = 'table';
-        document.getElementById("noResults").style.display = "table-row";
+        noResultsMsg.style.display = "none";
     } else {
         document.querySelector('.table').style.display = 'table';
-        document.getElementById("noResults").style.display = "none";
+        noResultsMsg.style.display = "none";
     }
 }
