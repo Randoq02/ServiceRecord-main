@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <form class="needs-validation" novalidate>
                     <div class="row">
-                        <div class="col-md-4 mb-2">
+                        <div class="col-md-4 mb-3">
                             <label for="datepicker">From</label><br>
                             <input class="form-control" type="date" id="datepicker" min="1990-01-01" max="2100-12-31"
                                 required>
@@ -27,50 +27,65 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Designation</label>
-                            <input type="text" class="form-control" autocomplete="off" id="validationCustom03"
-                                placeholder="Designation" required>
+                            <select class="form-select" aria-label="Default select example" required>
+                                <option selected disabled hidden value="">Select Designation</option>
+                                <option value="1">Category One</option>
+                                <option value="2">Category Two</option>
+                                <option value="3">Category Three</option>
+                            </select>
                             <div class="invalid-feedback">
-                                Required
+                                Please select a Designation.
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Status</label>
-                            <input type="text" class="form-control" autocomplete="off" id="validationCustom04"
-                                placeholder="Status" required>
+                            <select class="form-select" aria-label="Default select example" required>
+                                <option selected disabled hidden value="">Select Status</option>
+                                <option value="1">Category One</option>
+                                <option value="2">Category Two</option>
+                                <option value="3">Category Three</option>
+                            </select>
                             <div class="invalid-feedback">
-                                Required
+                                Please select a Status.
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Salary</label>
-                            <input type="text" class="form-control" autocomplete="off" id="validationCustom05"
-                                placeholder="Salary" required>
+                            <input type="text" class="form-control" autocomplete="off" placeholder="Salary" required>
                             <div class="invalid-feedback">
                                 Required
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Station place of assignment</label>
-                            <input type="text" class="form-control" autocomplete="off" id="validationCustom06"
-                                placeholder="Station Place of Assignment" required>
+                            <select class="form-select" aria-label="Default select example"required>
+                                <option selected disabled hidden value="">Select Status</option>
+                                <option value="1">Category One</option>
+                                <option value="2">Category Two</option>
+                                <option value="3">Category Three</option>
+                            </select>
                             <div class="invalid-feedback">
-                                Required
+                                Please select a Station place of assignment.
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Branch</label>
-                            <input type="text" class="form-control" autocomplete="off" id="validationCustom07"
-                                placeholder="Branch" required>
+                            <select class="form-select" aria-label="Default select example"required>
+                                <option selected disabled hidden value="">Select Cause</option>
+                                <option value="1">Category One</option>
+                                <option value="2">Category Two</option>
+                                <option value="3">Category Three</option>
+                            </select>
                             <div class="invalid-feedback">
-                                Required
+                                Please select a branch.
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationCustom02">WithOut Pay</label>
-                            <input type="text" class="form-control" autocomplete="off" id="validationCustom08"
-                                placeholder="WithOut Pay" required>
+                            <label for="datepicker">Without Pay</label><br>
+                            <input class="form-control" type="date" id="datepicker" min="1990-01-01" max="2100-12-31"
+                                required>
                             <div class="invalid-feedback">
-                                Required
+                                Please select a Without Pay
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -83,17 +98,21 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Cause</label>
-                            <input type="text" class="form-control" autocomplete="off" id="validationCustom10"
-                                placeholder="Cause">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Select Cause</option>
+                                <option value="1">Category One</option>
+                                <option value="2">Category Two</option>
+                                <option value="3">Category Three</option>
+                            </select>
                         </div>
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom02">Agency Code</label>
-                            <input type="text" class="form-control" autocomplete="off" id="validationCustom11"
-                                placeholder="Agency Code">
+                            <input type="text" class="form-control" autocomplete="off" placeholder="Agency Code">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button class="btn btn-primary" id="add" type="submit">Add Service Records</button>        
+                            <button class="btn btn-primary" id="add" type="submit">Add Service
+                                Records</button>
                         </div>
                     </div>
                 </form>
