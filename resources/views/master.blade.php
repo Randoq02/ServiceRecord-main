@@ -17,6 +17,7 @@
 
     <!--css styles-->
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+    <link rel="stylesheet" href="{{ asset('Css/th.css') }}">
 
     <!--sweetalert CSS-->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
@@ -39,7 +40,6 @@
                 <a class="nav-link" data-bs-toggle="tab" href="#leaveWithoutPay">Leave Without Pay</a>
             </li>
         </ul>
-
         <div class="tab-content">
             <div id="serviceRecords" class="tab-pane fade show active">
                 <div class="card">
@@ -50,9 +50,10 @@
                     </div>
                     <div class="card-body">
                         <table class="ui celled table" id="ServiceRecordTbl">
+                            
                             <!-- Table header -->
                             <thead>
-                                <tr class="text-center">
+                                <tr>
                                     <th>Employee ID</th>
                                     <th>FROM</th>
                                     <th>TO</th>
@@ -69,24 +70,192 @@
                             </thead>
                             <!-- Table body -->
                             <tbody>
-                                @for ($i = 1; $i < 30; $i++)
-                                    <tr class="text-center">
-                                        <td>0286315</td> 
-                                        <td>09/16/1991</td>
-                                        <td>12/31/1991</td>
-                                        <td>Teacher 1</td>
-                                        <td>Reg/Perm.</td>
-                                        <td>72,156.00</td>
-                                        <td>DCS, PAMARISAN</td>
-                                        <td>Nat'I</td>
-                                        <td>None</td>
-                                        <td></td>
-                                        <td>Original Appt</td>
-                                        <td>1000042694</td>
-                                    </tr>
-                                @endfor
+                                <tr>
+                                    <td>1</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Teacher 1</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <!-- add more rows here -->
+                                <tr>
+                                    <td>2</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Tech Support</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Tech Support</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Tech Support</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Tech Support</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Tech Support</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Tech Support</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Tech Support</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Tech Support</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Data Analytic</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Netword Admin</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>TechHead</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td> 
+                                    <td>09/16/1991</td>
+                                    <td>12/31/1991</td>
+                                    <td>Consultantt</td>
+                                    <td >Reg/Perm.</td>
+                                    <td>72,156.00</td>
+                                    <td>DCS, PAMARISAN</td>
+                                    <td >Nat'I</td>
+                                    <td>None</td>
+                                    <td></td>
+                                    <td>Original Appt</td>
+                                    <td>1000042694</td>
+                                </tr>
                             </tbody>
                         </table>
+                        
                     </div>
                 </div>
             </div>
@@ -135,7 +304,8 @@
 
                 <!--javascript SubmitDisabling-->
                 <script src="{{ asset('javascript/SubmitDisabling.js') }}" defer></script>
-                <script src="{{ asset('javascript/ServiceRecord.js') }}" defer></script>
+                <script src="{{ asset('javascript/Column_Filter.js') }}" defer></script>
+         
 
 
                 <!--Sweet alert 2 cdn-->
@@ -146,5 +316,4 @@
                 @include('modals.newServiceRecord')
             </footer>
 </body>
-
 </html>
