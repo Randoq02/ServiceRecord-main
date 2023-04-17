@@ -22,7 +22,6 @@
 
 
     <!--css styles-->
-    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Filtering.css') }}">
     <!--sweetalert CSS-->
@@ -68,7 +67,6 @@
                     <th>FirstName</th>
                     <th>School</th>
                     <th>Gmail</th>
-                    <th>Position</th>
 
                 </tr>
             </thead>
@@ -76,11 +74,10 @@
             <tbody id="tableBody">
                 <tr class="text-center">
                     <td>0286315</td>
-                    <td><a href="{{ route('employee') }}" id="EmployeeName">Mark Anthony H. Catubig</a></td>
+                    <td><a href="{{ route('employee') }}" id="EmployeeName">Catubig</a></td>
                     <td>Mark</td>
                     <td>School Division Office- Marikina</td>
                     <td>mcatubig27@gmail.com</td>
-                    <td>Office Clerk </td>
                 </tr>
             </tbody>
         </table>
@@ -90,7 +87,8 @@
 
 
     <body>
-        <div id="myContainer" class="d-none" style="">
+        
+        <div id="myContainer" style="">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" data-bs-toggle="tab" href="#serviceRecords">Service Record</a>

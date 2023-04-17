@@ -42,6 +42,10 @@ function filterTable() {
         noResultsMsg.style.display = "none";
     }
 }
-$("#Employeetbl").on('click', '#EmployeeName', function(){
-    $("ServiceRecordTbl").Employeetbl();
+$("#Employeetbl").on('click', '#EmployeeName', function () {
+    // Retrieve the other table
+    var otherTable = document.getElementById("Employeetbl");
+
+    // Do something with the other table, for example:
+    $(Employeetbl).show();
 })
