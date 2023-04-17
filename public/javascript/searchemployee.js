@@ -42,3 +42,6 @@ function filterTable() {
         noResultsMsg.style.display = "none";
     }
 }
+$("#Employeetbl").on('click', '#EmployeeName', function(){
+    $("ServiceRecordTbl").Employeetbl();
+})

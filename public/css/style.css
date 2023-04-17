@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-.boxContainer {
+.search-container {
     margin: auto;
     margin-top: 5%;
     position: relative;
@@ -39,4 +39,8 @@
 
 thead input {
     width: 100%;
+}
+
+#ServiceRecordTbl thead {
+    display: table-header-group;
 }
