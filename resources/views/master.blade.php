@@ -20,7 +20,7 @@
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.semanticui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script>
 
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" />
@@ -37,9 +37,6 @@
 </head>
 
 <body>
-    <header>
-        <!-- place navbar here -->
-    </header>
     <main>
         <br>
         <div class="container">
@@ -66,7 +63,7 @@
                 <tr class="text-center">
                     <th>Employee NO.</th>
                     <th>Last Name</th>
-                    <th>Firs tName</th>
+                    <th>First Name</th>
                     <th>Middle Initial</th>
                     <th>School</th>
                     <th>Email</th>
@@ -103,12 +100,11 @@
                             <div class="card-header ">
                                 <button type="button" class="btn btn-primary text-white " data-bs-toggle="modal"
                                     data-bs-target="#newServiceRecord" style="float:right"><i
-                                        class="fa-regular fa-plus"></i>
-                                    Service
-                                    Record</button>
+                                        class="fa-regular fa-plus"></i>ServiceRecord</button>
                             </div>
                             <div class="card-body">
-                                <table class="table table-striped table-hover table table-bordered" id="ServiceRecordTbl">
+                                <table class="table table-striped table-hover table table-bordered"
+                                    id="ServiceRecordTbl">
                                     <!-- Table header -->
                                     <thead>
                                         <tr>
@@ -142,8 +138,8 @@
                                                 <td>Original Appt</td>
                                                 <td>1000042694</td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary">Edit</button> 
-                                                    <button type="button" class="btn btn-danger">Delete</button>
+                                                    <button type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                         @endfor
