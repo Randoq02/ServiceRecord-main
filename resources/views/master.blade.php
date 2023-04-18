@@ -138,8 +138,19 @@
                                                 <td>Original Appt</td>
                                                 <td>1000042694</td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></button>
-                                                    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                                    <div class="dropdown">
+                                                        <button type="button" class="btn btn-primary dropdown-toggle"
+                                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                                            data-bs-auto-close="outside">
+                                                            Dropdown form
+                                                        </button>
+                                                        <form class="dropdown-menu p-3">
+                                                            <button type="button" class="btn btn-primary"><i
+                                                                class="fa-solid fa-pen-to-square"></i></button>
+                                                        <button type="button" class="btn btn-danger"><i
+                                                                class="fa-solid fa-trash"></i></button>
+                                                        </form>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         @endfor
