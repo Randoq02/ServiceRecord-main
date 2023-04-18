@@ -17,4 +17,3 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/ServiceRecord', [ServiceRecordController::class, 'master'])->name('employee');
-Route::get('/SearchEmployee', [ServiceRecordController::class, 'search']);

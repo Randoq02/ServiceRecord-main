@@ -3,7 +3,12 @@ var tableBody = document.getElementById("tableBody");
 var noResultsMsg = document.getElementById("noResults");
 
 // Add event listener to search input
-document.querySelector('.search').addEventListener('keyup', filterTable);
+document.querySelector('.search').addEventListener('keyup', function (event) {
+    // Check if Enter key was pressed
+    if (event.keyCode === 13) {
+        filterTable();
+    }
+});
 
 function filterTable() {
     // Get input value
@@ -34,18 +39,23 @@ function filterTable() {
         document.querySelector('.table').style.display = 'none';
         noResultsMsg.style.display = "none";
     } else if (noResults) {
-        tableBody.innerHTML = "<tr><td colspan='5'>" + "No results found." + "</td></tr>";
+        tableBody.innerHTML = "<tr><td colspan='6' class='text-center'>" + "No results found." + "</td></tr>";
         document.querySelector('.table').style.display = 'table';
-        noResultsMsg.style.display = "none";
+        noResultsMsg.style.display = "block";
     } else {
         document.querySelector('.table').style.display = 'table';
         noResultsMsg.style.display = "none";
     }
-}
-$("#Employeetbl").on('click', '#EmployeeName', function () {
-    // Retrieve the other table
-    var otherTable = document.getElementById("Employeetbl");
 
-    // Do something with the other table, for example:
-    $(Employeetbl).show();
-})
+}
+
+$("#Employeetbl").on('click', '#EmployeeName', function (event) {
+    event.preventDefault();
+    $('#myContainer').removeClass('d-none');
+    $('#myContainer .nav-tabs a[href="#serviceRecords"]').tab('show');
+    // Remove the .draw() function call from here
+});
+$('#ServiceRecordTbl').DataTable({
+    paging: false
+}).draw();
+
