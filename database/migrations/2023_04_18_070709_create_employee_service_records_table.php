@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('without_pay')->nullable();
             $table->string('branch');
             $table->date('date');
-            $table->bigIncrements('agency_code');
-            $table->timestamps();
+            $table->integer('agency_code');
+            $table->timestamps=false;
         });
     }
 

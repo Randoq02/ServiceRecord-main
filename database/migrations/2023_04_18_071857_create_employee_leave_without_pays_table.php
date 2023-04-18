@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('employee_leave_without_pays', function (Blueprint $table) {
-            $table->date();
+            $table->integer('year', 4);
             $table->timestamps=false;
         });
     }
