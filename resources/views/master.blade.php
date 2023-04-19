@@ -47,7 +47,7 @@
                     <li><a class="dropdown-item" href="#">Employee No.</a></li>
                     <li><a class="dropdown-item" href="#">Last Name</a></li>
                     <li><a class="dropdown-item" href="#">First Name</a></li>
-                    <li><a class="dropdown-item" href="#">Middle Initial</a></li>
+                    <li><a class="dropdown-item" href="#">Middle Name</a></li>
                     <li><a class="dropdown-item" href="#">School</a></li>
                     <li><a class="dropdown-item" href="#">Email</a></li>
                 </ul>
@@ -64,7 +64,7 @@
                     <th>Employee NO.</th>
                     <th>Last Name</th>
                     <th>First Name</th>
-                    <th>Middle Initial</th>
+                    <th>Middle Name</th>
                     <th>School</th>
                     <th>Email</th>
                 </tr>
@@ -75,7 +75,7 @@
                     <td><a href="{{ route('employee') }}" id="EmployeeName">12345</a></td>
                     <td>Catubig</td>
                     <td>Mark</td>
-                    <td>H</td>
+                    <td>Huevia</td>
                     <td>School Division Office- Marikina</td>
                     <td>mcatubig27@gmail.com</td>
                 </tr>

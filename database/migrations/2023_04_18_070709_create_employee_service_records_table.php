@@ -14,18 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('employee_service_records', function (Blueprint $table) {
-            $table->id();
+            $table->id('employee_no');    
             $table->date('from');
             $table->date('to');
-            $table->string('designation');
-            $table->string('status');
-            $table->float('salary');
-            $table->string('station_place_of_assignment');
+            $table->string('designation', 100);
+            $table->string('status', 100);
+            $table->float('salary', 8, 2);
+            $table->string('station_place_of_assignment', 100);
             $table->string('without_pay')->nullable();
-            $table->string('branch');
+            $table->string('branch', 100);
             $table->date('date');
-            $table->integer('agency_code');
-            $table->timestamps=false;
+            $table->string('cause', 100)->nullable();
+            $table->integer('agency_code')->nullable();
         });
     }
 

@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 return new class extends Migration
 {
     /**
@@ -14,8 +15,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('employee_leave_without_pays', function (Blueprint $table) {
-            $table->integer('year', 4);
-            $table->timestamps=false;
+            $table->id('employee_no');
+            $table->unsignedTinyInteger('day');
+            $table->unsignedTinyInteger('month');
+            $table->year('year');
         });
     }
 
