@@ -21,10 +21,10 @@ return new class extends Migration
             $table->string('status', 100);
             $table->decimal('salary', 12, 2);
             $table->string('station_place_of_assignment', 100);
-            $table->string('without_pay')->nullable();
+            $table->string('without_pay');
             $table->string('branch', 100);
             $table->date('date');
-            $table->string('cause', 100)->nullable();
+            $table->string('cause', 100);
             $table->integer('agency_code');
         });
     }

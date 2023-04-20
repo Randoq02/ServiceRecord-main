@@ -24,10 +24,10 @@ class EmployeeServiceRecordsFactory extends Factory
             'status'=>fake()->word(),
             'salary' => fake()->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 99999999.99),
             'station_place_of_assignment'=>fake()->jobTitle(),
-            'without_pay'=>fake()->word()->nullable(),
+            'without_pay'=>fake()->word(),
             'branch'=>fake()->city(),
             'date'=>fake()->date(),
-            'cause'=>fake()->word()->nullable(),
+            'cause'=>fake()->word(),
             'agency_code'=>fake()->randomNumber($nbDigits = NULL, $strict = false),
         ];
     }
