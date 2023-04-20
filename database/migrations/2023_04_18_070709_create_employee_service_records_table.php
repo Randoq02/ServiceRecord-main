@@ -19,13 +19,13 @@ return new class extends Migration
             $table->date('to');
             $table->string('designation', 100);
             $table->string('status', 100);
-            $table->float('salary', 8, 2);
+            $table->decimal('salary', 12, 2);
             $table->string('station_place_of_assignment', 100);
             $table->string('without_pay')->nullable();
             $table->string('branch', 100);
             $table->date('date');
             $table->string('cause', 100)->nullable();
-            $table->integer('agency_code')->nullable();
+            $table->integer('agency_code');
         });
     }
 

@@ -22,13 +22,13 @@ class EmployeeServiceRecordsFactory extends Factory
             'to'=>fake()->date(),
             'designation'=>fake()->jobTitle(),
             'status'=>fake()->word(),
-            'salary'=>fake()->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL),
+            'salary' => fake()->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 99999999.99),
             'station_place_of_assignment'=>fake()->jobTitle(),
             'without_pay'=>fake()->word()->nullable(),
             'branch'=>fake()->city(),
             'date'=>fake()->date(),
             'cause'=>fake()->word()->nullable(),
-            'agency_code'=>fake()->word()->nullable(),
+            'agency_code'=>fake()->randomNumber($nbDigits = NULL, $strict = false),
         ];
     }
 }
