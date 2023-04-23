@@ -4,7 +4,6 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-
 return new class extends Migration
 {
     /**
@@ -14,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('employee_leave_without_pays', function (Blueprint $table) {
-            $table->id('employee_no');
-            $table->unsignedTinyInteger('day');
-            $table->unsignedTinyInteger('month');
-            $table->year('year');
+        Schema::create('employee_leave', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employee_leave_without_pays');
+        Schema::dropIfExists('employee_leave');
     }
 };

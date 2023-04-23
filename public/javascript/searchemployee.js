@@ -2,13 +2,18 @@
 var tableBody = document.getElementById("tableBody");
 var noResultsMsg = document.getElementById("noResults");
 
-// Add event listener to search input
-document.querySelector('.search').addEventListener('keyup', function (event) {
-    // Check if Enter key was pressed
-    if (event.keyCode === 13) {
-        filterTable();
-    }
-});
+// Show table headings and table body when page loads
+document.querySelector('#Employeetbl').style.display = 'table';
+document.querySelector('#ServiceRecordTbl').style.display = 'table';
+document.querySelector('#tableHead').style.display = 'table-header-group';
+tableBody.style.display = 'table-row-group';
+
+// Hide table data initially
+tableBody.style.display = 'none';
+
+function showTableHeadings() {
+    document.querySelector('#tableHead').style.display = 'table-header-group';
+}
 
 function filterTable() {
     // Get input value
@@ -36,26 +41,36 @@ function filterTable() {
     }
     // Show/hide table and "No results found" message based on search query
     if (searchInput === '') {
-        document.querySelector('.table').style.display = 'none';
+        tableBody.style.display = 'none';
         noResultsMsg.style.display = "none";
     } else if (noResults) {
-        tableBody.innerHTML = "<tr><td colspan='6' class='text-center'>" + "No results found." + "</td></tr>";
-        document.querySelector('.table').style.display = 'table';
+        tableBody.innerHTML = "";
+        document.querySelector('#tableHead').style.display = 'none';
         noResultsMsg.style.display = "block";
     } else {
-        document.querySelector('.table').style.display = 'table';
+        showTableHeadings();
+        tableBody.style.display = 'table-row-group';
         noResultsMsg.style.display = "none";
     }
-
 }
 
-$("#Employeetbl").on('click', '#EmployeeName', function (event) {
+// Add event listener to search input
+document.querySelector('.search').addEventListener('keyup', function(event) {
+    // Check if Enter key was pressed
+    if (event.keyCode === 13) {
+        filterTable();
+    }
+});
+
+// Show ServiceRecordTbl when EmployeeName is clicked
+$("#Employeetbl").on('click', '#EmployeeName', function(event) {
     event.preventDefault();
     $('#myContainer').removeClass('d-none');
     $('#myContainer .nav-tabs a[href="#serviceRecords"]').tab('show');
-    // Remove the .draw() function call from here
 });
+
+// Initialize ServiceRecordTbl DataTable
 $('#ServiceRecordTbl').DataTable({
     paging: false
-}).draw();
 
+}).draw();

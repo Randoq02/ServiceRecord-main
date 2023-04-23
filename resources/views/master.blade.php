@@ -34,54 +34,84 @@
 
     <!--Font Awesome Cln-->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css" />
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
+<?php
+// connect to the database
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'servicerecord';
+$conn = new mysqli('localhost','root','', $database);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// process the search query
+if (isset($_GET['query'])) {
+    $query = $_GET['query'];
+    $sql = "SELECT * FROM employee_records WHERE employee_no LIKE '%$query%' OR last_name LIKE '%$query%' OR first_name LIKE '%$query%' OR middle_name LIKE '%$query%' OR school LIKE '%$query%' OR email LIKE '%$query%'";
+    $result = $conn->query($sql);
+} else {
+    $result = null;
+}
+?>
 
 <body>
     <main>
         <br>
         <div class="container">
-            <div class="input-group mb-3">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">Employee No.</button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Employee No.</a></li>
-                    <li><a class="dropdown-item" href="#">Last Name</a></li>
-                    <li><a class="dropdown-item" href="#">First Name</a></li>
-                    <li><a class="dropdown-item" href="#">Middle Name</a></li>
-                    <li><a class="dropdown-item" href="#">School</a></li>
-                    <li><a class="dropdown-item" href="#">Email</a></li>
-                </ul>
-                <input type="text" class="form-control search custom-input-width"
-                    aria-label="Text input with dropdown button">
+            <form method="GET">
+                <div class="input-group mb-3">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">Employee No.</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Employee No.</a></li>
+                        <li><a class="dropdown-item" href="#">Last Name</a></li>
+                        <li><a class="dropdown-item" href="#">First Name</a></li>
+                        <li><a class="dropdown-item" href="#">Middle Name</a></li>
+                        <li><a class="dropdown-item" href="#">School</a></li>
+                        <li><a class="dropdown-item" href="#">Email</a></li>
+                    </ul>
+                    <input type="text" name="query" class="form-control search custom-input-width"
+                        aria-label="Text input with dropdown button">
+                </div>
+            </form>
+            <?php if ($result && $result->num_rows > 0): ?>
+            <div class="table-responsive">
+                <table class="table table-striped" id="Employeetbl">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Employee NO.</th>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>School</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <?php while ($row = $result->fetch_assoc()): ?>
+                        <tr class="text-center">
+                            <td><a href="{{ route('employee') }}" id="EmployeeName"><?php echo $row['employee_no']; ?></a></td>
+                            <td><?php echo $row['last_name']; ?></td>
+                            <td><?php echo $row['first_name']; ?></td>
+                            <td><?php echo $row['middle_name']; ?></td>
+                            <td><?php echo $row['school']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                        </tr>
+                        <?php endwhile; ?>
+                    </tbody>
+                </table>
             </div>
+            <?php elseif ($result): ?>
+            <div class="alert alert-danger">No results found.</div>
+            <?php endif; ?>
         </div>
     </main>
-    <div class="container">
-        <table class="table table-striped" style="display:none;" id="Employeetbl">
-            <!-- Table of Contents -->
-            <thead>
-                <tr class="text-center">
-                    <th>Employee NO.</th>
-                    <th>Last Name</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>School</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <!-- Table body -->
-            <tbody id="tableBody">
-                <tr class="text-center">
-                    <td><a href="{{ route('employee') }}" id="EmployeeName">12345</a></td>
-                    <td>Catubig</td>
-                    <td>Mark</td>
-                    <td>Huevia</td>
-                    <td>School Division Office- Marikina</td>
-                    <td>mcatubig27@gmail.com</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+</body
+
 
     <body>
         <div class="container-fluid">
