@@ -106,8 +106,8 @@ if (isset($_GET['query']) && isset($_GET['searchby'])) {
                                 onclick="document.getElementById('searchby').value='email';">Email</a></li>
                     </ul>
                     <input type="hidden" name="searchby" id="searchby" value="employee_no">
-                    <input type="text" name="query" autocomplete="off" class="form-control search custom-input-width"
-                        aria-label="Text input with dropdown button">
+                    <input type="text" name="query" autocomplete="off"
+                        class="form-control search custom-input-width" aria-label="Text input with dropdown button">
                 </div>
             </form>
             <div class="table-responsive">
@@ -135,7 +135,7 @@ if (isset($_GET['query']) && isset($_GET['searchby'])) {
                         </tr>
                         <?php endwhile; ?>
                     </tbody>
-                </table>   
+                </table>
             </div>
             <?php elseif ($result): ?>
             <div class="alert alert-danger">No results found.</div>
@@ -184,22 +184,21 @@ if (isset($_GET['query']) && isset($_GET['searchby'])) {
                                 </thead>
                                 <!-- Table body -->
                                 <tbody>
-                                  
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                                        data-bs-toggle="dropdown" aria-expanded="false"
-                                                        data-bs-auto-close="outside">
-                                                        Dropdown form
-                                                    </button>
-                                                    <form class="dropdown-menu p-3">
-                                                        <button type="button" class="btn btn-primary"><i
-                                                                class="fa-solid fa-pen-to-square"></i></button>
-                                                        <button type="button" class="btn btn-danger"><i
-                                                                class="fa-solid fa-trash"></i></button>
-                                                    </form>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn btn-primary dropdown-toggle"
+                                            data-bs-toggle="dropdown" aria-expanded="false"
+                                            data-bs-auto-close="outside">
+                                            Dropdown form
+                                        </button>
+                                        <form class="dropdown-menu p-3">
+                                            <button type="button" class="btn btn-primary"><i
+                                                    class="fa-solid fa-pen-to-square"></i></button>
+                                            <button type="button" class="btn btn-danger"><i
+                                                    class="fa-solid fa-trash"></i></button>
+                                        </form>
+                                    </div>
+                                    </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -273,5 +272,4 @@ if (isset($_GET['query']) && isset($_GET['searchby'])) {
     </div>
 </body>
 </body>
-
 </html>
