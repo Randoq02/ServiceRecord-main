@@ -37,55 +37,11 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<?php
-// connect to the database
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'servicerecord';
-$conn = new mysqli('localhost', 'root', '', $database);
-if ($conn->connect_error) {
-    die('Connection failed: ' . $conn->connect_error);
-}
-
-// process the search query
-// process the search query
-if (isset($_GET['query']) && isset($_GET['searchby'])) {
-    $query = $_GET['query'];
-    $searchBy = $_GET['searchby'];
-
-    switch ($searchBy) {
-        case 'employee_no':
-            $sql = "SELECT * FROM employee_records WHERE employee_no='$query'";
-            break;
-        case 'last_name':
-            $sql = "SELECT * FROM employee_records WHERE last_name='$query'";
-            break;
-        case 'first_name':
-            $sql = "SELECT * FROM employee_records WHERE first_name='$query'";
-            break;
-        case 'middle_name':
-            $sql = "SELECT * FROM employee_records WHERE middle_name='$query'";
-            break;
-        case 'school':
-            $sql = "SELECT * FROM employee_records WHERE school='$query'";
-            break;
-        case 'email':
-            $sql = "SELECT * FROM employee_records WHERE email='$query'";
-            break;
-        default:
-            $sql = "SELECT * FROM employee_records WHERE employee_no='$query' OR last_name='$query' OR first_name='$query' OR middle_name='$query' OR school='$query' OR email='$query'";
-    }
-
-    $result = $conn->query($sql);
-} else {
-    $result = null;
-}
-?>
-
+<title> Service Records</title>
+<main class="container">
+    <h2> Service Records </h2>
 <body>
     <main>
-        <br>
         <div class="container">
             <form method="GET">
                 <div class="input-group mb-3">
@@ -110,9 +66,11 @@ if (isset($_GET['query']) && isset($_GET['searchby'])) {
                         class="form-control search custom-input-width" aria-label="Text input with dropdown button">
                 </div>
             </form>
-            <div class="table-responsive">
-                <?php if ($result && $result->num_rows > 0): ?>
-                <table class="table table-striped" id="Employeetbl">
+            @if ($noResultFound)
+            <div class="alert alert-danger">No results found.</div>
+        @else
+            <div class="table-responsive" id="tableContainer">
+                <table class="table" id="Employeetbl">
                     <thead>
                         <tr class="text-center">
                             <th>Employee NO.</th>
@@ -124,25 +82,24 @@ if (isset($_GET['query']) && isset($_GET['searchby'])) {
                         </tr>
                     </thead>
                     <tbody id="tableBody">
-                        <?php while ($row = $result->fetch_assoc()): ?>
+                        @foreach ($data['employee_records'] as $emp_data)
                         <tr class="text-center">
-                            <td><a href="{{ route('employee') }}" id="EmployeeName"><?php echo $row['employee_no']; ?></a></td>
-                            <td><?php echo $row['last_name']; ?></td>
-                            <td><?php echo $row['first_name']; ?></td>
-                            <td><?php echo $row['middle_name']; ?></td>
-                            <td><?php echo $row['school']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
+                            <td> {{ $emp_data['employee_no'] }} </td>
+                            <td> {{ $emp_data['last_name'] }}</td>
+                            <td>{{ $emp_data['first_name'] }}</td>
+                            <td> {{ $emp_data['middle_name'] }} </td>
+                            <td> {{ $emp_data['school'] }} </td>
+                            <td> {{ $emp_data['email'] }} </td>
                         </tr>
-                        <?php endwhile; ?>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
-            <?php elseif ($result): ?>
-            <div class="alert alert-danger">No results found.</div>
-            <?php endif; ?>
+        @endif
         </div>
     </main>
 </body>
+
 
 <body>
     <div class="container-fluid">
@@ -221,16 +178,14 @@ if (isset($_GET['query']) && isset($_GET['searchby'])) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @for ($i = 1; $i < 30; $i++)
-                                        <tr class="text-center">
-                                            <td>1991</td>
-                                            <td>March</td>
-                                            <td>22</td>
-                                            <td class="text-center">
-                                                <button type="button" class="btn btn-primary">View</button>
-                                            </td>
-                                        </tr>
-                                    @endfor
+                                    <tr class="text-center">
+                                        <td>1991</td>
+                                        <td>March</td>
+                                        <td>22</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-primary">View</button>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\EmployeeRecords;
 
 class DatabaseController extends Controller
 {
+    public function getUsersFromSecondDatabase()
+{
+    $users = DB::connection('second_mysql')->table('users')->get();
+    return view('users', ['users' => $users]);
+}
     public function searchEmployee(Request $request)
     {
         $query = $request->input('query');
@@ -20,10 +26,5 @@ $employees = EmployeeRecord::where(function($q) use ($query, $searchBy) {
 
 return $employees->count() > 0 ? view('search-results', ['employees' => $employees]) : view('no-results-found');
 
-        if ($employees->count() > 0) {
-            return view('search-results', ['employees' => $employees]);
-        } else {
-            return view('no-results-found');
-        }
     }
 }
